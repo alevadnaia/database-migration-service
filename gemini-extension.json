@@ -1,0 +1,15 @@
+{
+  "name": "android-management-api",
+  "version": "1.0.0",
+  "description": "Access enterprise mobility data using natural language queries about device fleets, automated auditing of policy compliance, and the integration of device management data into broader automated workflows.",
+  "mcpServers": {
+    "bigquery": {
+      "httpUrl": "https://androidmanagement.googleapis.com/mcp",
+      "authProviderType": "google_credentials",
+      "oauth": {
+        "scopes": ["https://www.googleapis.com/auth/androidmanagement"]
+      },
+      "timeout": 30000
+    }
+  }
+}
