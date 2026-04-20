@@ -1,11 +1,17 @@
-# Android Management API MCP Extension
+# Database Migration Service Managed MCP Extension
 
-The Android Management API MCP extension enables AI agents to programmatically
-access enterprise mobility data. It allows for natural language queries about
-device fleets, automated auditing of policy compliance, and the integration of
-device management data into broader automated workflows.
+> **Preview:** This product is subject to the "Pre-GA Offerings Terms" in the
+> General Service Terms section of the
+> [Service Specific Terms](https://docs.cloud.google.com/terms/service-terms#1).
+> Pre-GA products and features are available "as is" and might have limited
+> support. For more information, see the
+> [launch stage descriptions](https://cloud.google.com/products#product-launch-stages).
 
-## Why use the Android Management API MCP server?
+The Database Migration Service managed MCP extension lets you manage migration
+jobs from your AI application. You can start, stop, resume, or delete migration
+jobs with Database Migration Service remote MCP server.
+
+## Why use the Database Migration Service managed MCP server?
 
 Google and Google Cloud
 [managed MCP servers](https://docs.cloud.google.com/mcp/overview) can be used in
@@ -29,7 +35,7 @@ control.
     project, then you already have the required permissions.
 
 3.  Ensure your administrator has enabled the
-    [Android Management API](https://console.cloud.google.com/marketplace/product/google/androidmanagement.googleapis.com)
+    [Database Migration Service API](https://console.cloud.google.com/marketplace/product/google/datamigration.googleapis.com)
     on the Google Cloud project.
 
 ## Configure authentication
@@ -49,42 +55,41 @@ For additional details, see the
 To install the extension, run the following command in your terminal:
 
 ```bash
-gemini extensions install https://github.com/gemini-cli-extensions/android-management-api
+gemini extensions install https://github.com/gemini-cli-extensions/database-migration-service
 ```
 
 ## Available tools
 
 To see a complete list of available tools and their schemas, see the
-[Android Management API MCP reference](https://developers.google.com/android/management/reference/mcp).
+[Database Migration Service MCP reference](https://docs.cloud.google.com/database-migration/docs/reference/mcp).
 
 ## Sample use cases
 
-The following are sample use cases for the Android Management API MCP server:
+The following are example use cases for the Database Migration Service MCP
+server:
 
--   Natural Language Queries: Ask complex questions about your device fleet
-    without writing code—for example, "Which of my devices are not compliant
-    with the latest security patch?"
--   Automated Audits: Periodically fetch data and compile reports on device
-    status and policy adherence.
--   Intelligent Alerting: Monitor fleet data to flag anomalies or potential
-    issues based on real-time insights.
+-   List, get, start, and delete migration jobs in your project.
+-   List static IP addresses that Database Migration Service connects from to
+    your source database during heterogeneous migrations.
+-   Use the get_operation tool to poll the status of operations such as starting
+    or deleting a migration job.
 
 ### Sample prompts
 
-You can use the following sample prompts to get information about Android
-Management API resources:
-
--   List the devices in enterprise `ENTERPRISE_ID`.
--   Get details for device `DEVICE_ID` in enterprise `ENTERPRISE_ID`.
--   Show the policy details for policy `POLICY_NAME`.
--   Which applications are available in enterprise `ENTERPRISE_ID`?
+-   List all running migration jobs in project `PROJECT_ID` and location
+    `LOCATION`.
+-   List all migration jobs that encountered errors in project `PROJECT_ID` and
+    location `LOCATION`.
+-   What's the status of the migration job `MIGRATION_JOB_ID` in `LOCATION`?
+-   Stop the migration job `MIGRATION_JOB_ID` in `LOCATION`.
+-   Resume all stopped migration jobs `MIGRATION_JOB_ID` in `LOCATION`.
 
 In the prompts, replace the following:
 
--   `ENTERPRISE_ID`: the resource name of the enterprise—for example,
-    enterprises/LC012345.
--   `DEVICE_ID`: the resource name of the device.
--   `POLICY_NAME`: the resource name of the policy.
+-   `PROJECT_ID` with your Google Cloud project identifier.
+-   `LOCATION` with the location of the migration job.
+-   `MIGRATION_JOB_ID` with your Database Migration Service migration job
+    identifier.
 
 ## Optional security and safety configurations
 
@@ -98,17 +103,17 @@ For more information about MCP security and governance, see
 
 ## Quotas and limits
 
-The Android Management API MCP server doesn't have its own quotas. There is no
-limit on the number of call that can be made to the MCP server. You are still
+The Database Migration Service MCP server doesn't have its own quotas. There is
+no limit on the number of call that can be made to the MCP server. You are still
 subject to the quotas enforced by the APIs called by the MCP server tools.
 
 ## Reference and resources
 
 *   Explore the
-    [Android Management API MCP server reference documentation](https://developers.google.com/android/management/reference/mcp),
+    [Database Migration Service remote MCP server reference documentation](https://docs.cloud.google.com/database-migration/docs/reference/mcp),
     which includes a list of all available tools, and the full input and output
     schema for each tool.
 *   See the
-    [Android Management API overview](https://developers.google.com/android/management).
+    [Database Migration Service overview](https://docs.cloud.google.com/database-migration/docs).
 *   Learn about
     [MCP security and governance](https://docs.cloud.google.com/mcp/ai-security-safety).
