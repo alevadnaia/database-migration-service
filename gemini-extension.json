@@ -1,13 +1,13 @@
 {
-  "name": "android-management-api",
+  "name": "database-migration-service",
   "version": "1.0.0",
-  "description": "Access enterprise mobility data using natural language queries about device fleets, automated auditing of policy compliance, and the integration of device management data into broader automated workflows.",
+  "description": "Manage database migration jobs using natural language.",
   "mcpServers": {
-    "bigquery": {
-      "httpUrl": "https://androidmanagement.googleapis.com/mcp",
+    "database-migration-service": {
+      "httpUrl": "https://datamigration.googleapis.com/mcp",
       "authProviderType": "google_credentials",
       "oauth": {
-        "scopes": ["https://www.googleapis.com/auth/androidmanagement"]
+        "scopes": ["https://www.googleapis.com/auth/cloud-datamigration"]
       },
       "timeout": 30000
     }
