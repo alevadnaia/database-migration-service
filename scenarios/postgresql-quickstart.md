@@ -60,9 +60,11 @@ troubleshoot and resolve errors before proceeding.
 
 ### 5. Destination Connection Profile
 
-DMS requires a specific user with `cloudsqlsuperuser` (Cloud SQL) or
-`alloydbsuperuser` (AlloyDB) privileges. Create it using available tools (rather
-than direct SQL execution).
+Create user for the purposes of migration on the destination instance using
+available tools (rather than direct SQL execution). Ensure the created user has
+`cloudsqlsuperuser` (Cloud SQL) or `alloydbsuperuser` (AlloyDB) privileges. Do
+not ask to provide user, just create it. Then proceed to destination connection
+profile creation.
 
 -   **Creation (AlloyDB)**:
 
