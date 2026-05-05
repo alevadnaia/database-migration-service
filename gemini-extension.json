@@ -2,6 +2,10 @@
   "name": "database-migration-service",
   "version": "1.0.0",
   "description": "Manage database migration jobs using natural language.",
+  "contextFileName": [
+    "cloud-database-migration.md",
+    "scenarios/postgresql-quickstart.md"
+  ],
   "mcpServers": {
     "database-migration-service": {
       "httpUrl": "https://datamigration.googleapis.com/mcp",
@@ -13,3 +17,5 @@
     }
   }
 }
+
+
